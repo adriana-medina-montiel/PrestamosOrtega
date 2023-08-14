@@ -1,0 +1,132 @@
+{% extends 'base.html' %}
+    
+{% block title %}Préstamos Ortega{% endblock %}
+
+{% block customCSS %}
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/index.css') }}"> 
+{% endblock %}
+
+{% block content %}  
+<main> 
+
+<!-- ¿Comó Funciona? -->
+
+    <div class="position-relative overflow-hidden p-3 p-md-5 text-center bg-body-tertiary">
+        <div class="col-md-6 p-lg-5 mx-auto my-5">
+            <h1 class="display-3 fw-bold">Bienvenido a la Familia</h1> <br>
+            <h3 class="fw-normal text-muted mb-3">¡Seguro te Préstamos!</h3> <br>
+            <div class="d-flex gap-3 justify-content-center lead fw-normal">
+                <button class="purple-button"><a class="primerlink" href="#">Quiero un préstamo</a></button>
+            </div>
+        </div>
+
+        <div class="product-device shadow-sm d-none d-md-block"></div>
+        <div class="product-device product-device-2 shadow-sm d-none d-md-block"></div>
+    </div>
+
+<!-- ¿Comó Funciona? -->
+    <div class="conte">
+        <div class="position-relative overflow-hidden p-3 p-md-5 text-center bg-body-tertiary">
+          <h2 class="featurette-heading  lh-1">¿Comó funciona?</h2> <br>
+          <h3 class="fw-normal ">Solicita un préstamo</h3> 
+          <p class="lead">Si eres mayor de edad puedes solicitar tu préstamo ¡Ahora!</p>
+
+            <div class="card border-0 shadow" data-aos="fade-in" data-aos-duration="1500">
+                <div class="card-body">
+                    <span class="card-contenido">1. Crea tu cuenta con tus datos personales y de domicilio.</span>
+                </div>
+            </div> 
+            <br>
+            <div class="card border-0 shadow" data-aos="fade-in" data-aos-duration="1500" data-aos-delay="1000">
+                <div class="card-body">
+                    <span class="card-contenido">2. Solicita tu préstamo y espera la aprobación.</span>
+                </div>
+            </div>
+            <br>
+            <div class="card border-0 shadow" data-aos="fade-in" data-aos-duration="1500" data-aos-delay="1000">
+                <div class="card-body">
+                    <span class="card-contenido">3. Si la solicitud es aprobada, el dinero será transferido a tu cuenta bancaria.</span>
+                </div>
+            </div>  
+            <br><br> 
+            <button class="purple-button"><a class="primerlink" href="#">Quiero un préstamo</a></button>
+
+        </div>
+    </div>
+
+    <img src="{{ url_for('static', filename='img/hombre-con-portatil.jpg') }}" alt="Hombre" class="imagen-hom">
+
+<!-- Simulador -->
+
+
+
+<!-- Comentarios -->
+
+<div id="myCarousel" class="carousel slide mb-6" data-bs-ride="carousel">
+    <div class="carousel-indicators">
+      <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+      <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="1" aria-label="Slide 2"></button>
+      <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="2" aria-label="Slide 3"></button>
+    </div>
+    <div class="carousel-inner">
+      <div class="carousel-item active">
+        <svg class="bd-placeholder-img" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" preserveAspectRatio="xMidYMid slice" focusable="false"><rect width="100%" height="100%" fill="var(--bs-secondary-color)"/></svg>
+        <div class="container">
+          <div class="carousel-caption text-start" style="display: flex; flex-direction:row; justify-content:space-around;">
+            <p class="opacity-75"></p>
+            <div class="comment-box"width="100px" height="100px">
+              <form action="">
+              <h2>Deja tu comentario:</h2>
+              <br><br><br>
+              <textarea id="comment" placeholder="Escribe tu comentario aquí..."></textarea>
+              <br>
+              <button class="purple-button"><a class="primerlink" href="#">Enviar</a></button>
+            </form>
+          </div>
+          <div class="comment-box"width="100px" height="100px">
+            <button class="purple-button"><a class="primerlink" href="{{ url_for('home.cover') }}">Ver comentarios</a></button>
+            <ul>
+              {% for comment in comments %}
+              <li>{{ comment.text }}</li>
+              {% endfor %}
+          </ul>
+          </div>
+          </div>
+        </div>
+      </div>
+      <div class="carousel-item">
+        <svg class="bd-placeholder-img" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" preserveAspectRatio="xMidYMid slice" focusable="false"><rect width="100%" height="100%" fill="var(--bs-secondary-color)"/></svg>
+        <div class="container">
+          <div class="carousel-caption">
+            <h1>¿Cuál es la escalabilidad de esta empresa?</h1>
+            <p>Contamos con un alto nivel de servicio y contacto directo con nuestro prestamista .</p>
+            <p><a class="btn btn-lg btn-primary" href="#">Leer mas</a></p>
+          </div>
+        </div>
+      </div>
+      <div class="carousel-item">
+        <svg class="bd-placeholder-img" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" preserveAspectRatio="xMidYMid slice" focusable="false"><rect width="100%" height="100%" fill="var(--bs-secondary-color)"/></svg>
+        <div class="container">
+          <div class="carousel-caption text-end">
+            <h1>Contactanos</h1>
+            <p>5516200312</p>
+            <p>prestamos_ortega@gmail.com</p>
+            <p><a class="btn btn-lg btn-primary" href="#">entrar</a></p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <button class="carousel-control-prev" type="button" data-bs-target="#myCarousel" data-bs-slide="prev">
+      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Previous</span>
+    </button>
+    <button class="carousel-control-next" type="button" data-bs-target="#myCarousel" data-bs-slide="next">
+      <span class="carousel-control-next-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Next</span>
+    </button>
+  </div>
+
+
+</main>
+{% endblock %}
+    

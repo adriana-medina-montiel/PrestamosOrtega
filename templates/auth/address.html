@@ -1,0 +1,70 @@
+{% extends 'base.html' %}
+    
+{% block title %}Registro de Domicilio{% endblock %}
+
+{% block customCSS %}
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/register.css') }}"> 
+{% endblock %}
+
+{% block content %}    
+
+<div class="form-container">
+
+    <h1>Registro de Domicilio</h1>
+
+    {% with messages = get_flashed_messages() %}
+        {% if messages %}
+            {% for message in messages %}
+                <div class="alert alert-success">
+                    {{ message }}
+                </div>
+            {% endfor %}
+        {% endif %}       
+    {% endwith %}
+
+    <form action="" method="post" class="modern-form">
+      
+        {{ form.csrf_token }}
+
+        <div class="form-field">
+            <label for="{{ form.id_estado.id_for_label }}">Estado:</label>
+            {{ form.id_estado(class="input-field", placeholder="Estado", required=true) }}
+        </div>
+        <div class="form-field">
+            <label for="{{ form.municipio .id_for_label }}">Municipio:</label>
+            {{ form.municipio(class="input-field", placeholder="Municipio", required=true) }}
+        </div>
+        <div class="form-field">
+            <label for="{{ form.cp.id_for_label }}">Codigó Postal:</label>
+            {{ form.cp(class="input-field", placeholder="Codigó Postal", required=true) }}
+        </div>
+        <div class="form-field">
+            <label for="{{ form.tipo_asen.id_for_label }}">Tipo de Asentamiento:</label>   
+            {{ form.tipo_asen(class="input-field", placeholder="Tipo de Asentamiento", required=true) }}
+        </div>
+        <div class="form-field">
+            <label for="{{ form.asentamiento.id_for_label }}">Asentamiento:</label>  
+            {{ form.asentamiento(class="input-field", placeholder="Asentamiento", required=true) }} 
+        </div>
+        <div class="form-field">
+            <label for="{{ form.calle.id_for_label }}">Calle:</label>  
+            {{ form.calle(class="input-field", placeholder="Calle", required=true) }} 
+        </div>
+        <div class="form-field">
+            <label for="{{ form.num_ext.id_for_label }}">Número Exterior:</label>  
+            {{ form.num_ext(class="input-field", placeholder="Número Exterior") }} 
+        </div>
+        <div class="form-field">
+            <label for="{{ form.num_int.id_for_label }}">Número Interior:</label>  
+            {{ form.num_int(class="input-field", placeholder="Número Interior") }} 
+        </div>
+        <br>
+        <div class="form-field">
+            {{ form.submit(class="submit-button") }}
+        </div>
+    </form>
+
+</div>
+
+{% endblock %}
+    

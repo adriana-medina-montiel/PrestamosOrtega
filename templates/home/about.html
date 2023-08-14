@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+    
+{% block title %}¿Quiénes Somos?{% endblock %}
+
+{% block content %}    
+<h1></h1>
+<div class="px-1 pt-1 my-1 text-center border-bottom">
+    <h1 class="display-4 fw-bold text-body-emphasis">Prestamos Ortega</h1>
+    <div class="col-lg-6 mx-auto">
+      <p class="lead mb-4"> ¡Bienvenidos al mundo del sistema de Préstamos Ortega! Somos un equipo dedicado a desglosar y presentar cómo funcionan estos sistemas esenciales en el ámbito financiero. Nuestra misión es brindar una visión clara y completa de cómo las personas, las empresas y las organizaciones pueden acceder a fondos para lograr sus objetivos financieros</p>
+      <ul class="nav col-12 col-md-auto mb-2 justify-content-center mb-md-0">
+        <li><a href="{{ url_for('home.cover') }}" class="nav-link link-secondary">>></a></li>
+    </ul>
+    <div class="overflow-hidden" style="max-height: 30vh;">
+      <div class="container px-5">
+        <img src="{{ url_for('static', filename='img/dinero.jpeg') }}" alt="ortegas" class="imagen-ort" width="700" height="500" loading="lazy">
+      </div>
+    </div>
+  </div>
+
+
+{% endblock %}
+    

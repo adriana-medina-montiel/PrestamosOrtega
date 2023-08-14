@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
+    <title>Login</title>
+
+    {% block customCSS %}
+        <link rel="stylesheet" href="{{ url_for('static', filename='css/login.css') }}"> 
+    {% endblock %}
+
+</head>
+<body class="d-flex align-items-center py-4 bg-body-tertiary text-center">
+    <main class="form-signin w-100 m-auto">
+    <form class="form-signin" action="" method="POST">
+        {{ form.csrf_token }}
+        <img class="mb-4" src="{{ url_for('static', filename='img/logoo .jpg') }}" alt="" width="200" height="150">
+
+        {% with messages = get_flashed_messages() %}
+            {% if messages %}<br />
+                {% for message in messages %}
+                    <div class="alert alert-primary alert-dismissible" role="alert">
+                        <strong>{{ message }}</strong>
+                        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                    </div>
+                {% endfor %}
+            {% endif %}
+        {% endwith %}
+
+        <h1 class="h3 mb-3 fw-normal">Iniciar Sesión</h1>
+
+        <div class="form-floating">
+            <input type="text" class="form-control" id="email" name="email" placeholder="Email">
+            <label for="{{ form.email.id_for_label }}">Correo</label>
+        </div>
+        <div class="form-floating mt-2">
+            <input type="password" class="form-control" name="password" placeholder="Password">
+            <label for="{{ form.password.id_for_label }}">Contraseña</label>
+        </div>
+        <button class="w-100 btn btn-lg btn-primary" type="submit">
+            <label for="{{ form.submit.id_for_label }}"></label>Ingresar
+        </button>
+        <p class="mt-5 mb-3 text-body-secondary">&copy; 2023</p>
+    </form>
+    </main>
+    <script src="/docs/5.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm" crossorigin="anonymous"></script>
+</body>
+</html>

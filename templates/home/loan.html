@@ -1,0 +1,46 @@
+{% extends 'base.html' %}
+    
+{% block title %}Préstamos{% endblock %}
+
+{% block content %}  
+{% with messages = get_flashed_messages() %}
+{% if messages %}<br />
+    {% for message in messages %}
+        <div class="alert alert-primary alert-dismissible" role="alert">
+            <strong>{{ message }}</strong>
+            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+        </div>
+    {% endfor %}
+{% endif %}
+{% endwith %}
+<div class="container">
+    <h1>Pide tu Préstamo</h1>
+    <br>
+
+    
+    <form action="" method="post">
+        {{ form.csrf_token }}
+
+        <div class="container">
+        <div>
+            {{ form.monto.label }}
+            {{ form.monto() }}
+        </div>
+        <div>
+            {{ form.periodo.label }}
+            {{ form.periodo() }}
+        </div>
+        <div>
+            {{ form.modalidad_pago.label }}
+            {{ form.modalidad_pago() }}
+        </div>
+        <div>
+            {{ form.submit }}
+        </div>
+        </div>
+
+    </form>
+
+
+    
+{% endblock %}

@@ -1,0 +1,44 @@
+{% extends 'base.html' %}
+    
+{% block title %}Préstamos Ortega{% endblock %}
+
+{% block customCSS %}
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/index.css') }}"> 
+{% endblock %}
+
+{% block content %}  
+<main>
+
+<div class="modal modal-sheet position-static d-block bg-body-secondary p-4 py-md-5" tabindex="-1" role="dialog" id="modalSheet">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content rounded-4 shadow">
+        <div class="modal-header border-bottom-0">
+          <h1 class="modal-title fs-5">Terminos y Condiciones</h1>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body py-0">
+          <p>Estimado usuario mediante este campo te damos a conocrer los terminos para poder validar tu prestamo:
+            <br>
+            SOLICITANTE:
+            <br>
+            Ser cliente persona física o físicas con actividad empresarial
+            <br>
+            Contar con buen historial crediticio y con capacidad de pago
+            <br>
+            CONDICIONES:
+            <br>
+            Tener una edad mínima de 18 y máxima de 84 años; tu edad + el plazo del crédito no debe ser mayor a 84 años con 364 días al momento del otorgamiento
+            <br>
+            En dado caso de retraso de pago de interes concientización de aumento de interes 
+            <br>
+            Contar con 2 avales con los cuales podamos solventar tu deuda o dar informacion de tu retraso
+          </p>
+        </div>
+        <div class="modal-footer flex-column align-items-stretch w-100 gap-2 pb-3 border-top-0">
+          <button type="button" class="btn btn-lg btn-primary">Aceptar</button>
+          <a href="{{ url_for('home.loan') }}"  class="btn btn-lg btn-secondary">Cancelar</a>
+        </div>
+      </div>
+    </div>
+  </div>
+  {% endblock%} 

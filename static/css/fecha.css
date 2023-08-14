@@ -1,0 +1,43 @@
+
+
+
+h1 {
+    color: #333;
+}
+
+/* Estilos para la tabla */
+table {
+    border-collapse: collapse;
+    width: 100%;
+    margin-top: 20px;
+}
+
+th, td {
+    border: 1px solid #b9b5b5;
+    padding: 8px;
+    text-align: left;
+}
+
+th {
+    background-color: #fde7fc;
+}
+
+tr:nth-child(even) {
+    background-color:  #f7e6ff;
+}
+
+.btn-siguiente {
+    display: block;
+    margin-top: 20px;
+    float: right;
+    background-color: #72b1f3;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.btn-siguiente:hover {
+    background-color: #3586dd;
+}

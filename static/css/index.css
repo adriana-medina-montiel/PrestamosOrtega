@@ -1,0 +1,150 @@
+.icon-link > .bi {
+    width: .75em;
+    height: .75em;
+  }
+  
+  /*
+   * Dummy devices (replace them with your own or something else entirely!)
+   */
+  
+.product-device {
+    position: absolute;
+    right: 10%;
+    bottom: -30%;
+    width: 300px;
+    height: 540px;
+    background-color: #8E44AD;
+    border-radius: 21px;
+    transform: rotate(30deg);
+  }
+  
+.product-device::before {
+    position: absolute;
+    top: 10%;
+    right: 10px;
+    bottom: 10%;
+    left: 10px;
+    content: "";
+    background-color: rgba(255, 255, 255, .1);
+    border-radius: 5px;
+  }
+  
+.product-device-2 {
+    top: -25%;
+    right: auto;
+    bottom: 0;
+    left: 5%;
+    background-color: #E8DAEF;
+  }
+  
+  
+  /*
+   * Extra utilities
+   */
+  
+.flex-equal > * {
+    flex: 1;
+  }
+
+@media (min-width: 768px) {
+  .flex-md-equal > * {
+      flex: 1;
+    }
+  }
+
+/* ¿Comó Funciona? */
+
+/* Featurettes
+------------------------- */
+
+/* Thin out the marketing headings */
+/* rtl:begin:remove */
+  .featurette-heading {
+  letter-spacing: -.05rem;
+}
+
+/* rtl:end:remove */
+
+/* RESPONSIVE CSS
+-------------------------------------------------- */
+
+@media (min-width: 40em) {
+  /* Bump up size of carousel content */
+  .carousel-caption p {
+    margin-bottom: 1.25rem;
+    font-size: 1.25rem;
+    line-height: 1.4;
+  }
+
+  .featurette-heading {
+    font-size: 50px;
+  }
+}
+
+@media (min-width: 62em) {
+  .featurette-heading {
+    margin-top: 2rem;
+  }
+}
+
+/* Comentarios */
+
+/* CUSTOMIZE THE CAROUSEL
+-------------------------------------------------- */
+
+/* Carousel base class */
+.carousel {
+  margin-bottom: 4rem;
+}
+/* Since positioning the image, we need to help out the caption */
+.carousel-caption {
+  bottom: 3rem;
+  z-index: 10;
+}
+
+/* Declare heights because of positioning of img element */
+.carousel-item {
+  height: 32rem;
+}
+
+.primerlink {
+  color: #F5EEF8;
+  text-decoration: none;
+}
+
+/* Estilos para el contenido */
+.conte {
+  width: 70%; /* Ancho del contenido */
+  float: left; /* Hace que el contenido flote a la izquierda */
+  padding-right: 20px; /* Espacio entre el contenido y la imagen */
+}
+
+
+/* Estilos para la imagen */
+.imagen-hom {
+  float: right; /* Hace que la imagen flote a la derecha */
+  width: 30%; /* Ancho de la imagen */
+}
+
+.purple-button {
+  background-color: #8E44AD;
+  color: white;
+  padding: 12px 24px;
+  border-radius: 20px;
+  border: none;
+  box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+  font-size: 16px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.purple-button:hover {
+  transform: scale(1.05);
+  box-shadow: 3px 3px 6px rgba(0, 0, 0, 0.3);
+}
+
+
+
+
+
+

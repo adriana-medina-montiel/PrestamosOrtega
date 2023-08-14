@@ -1,0 +1,43 @@
+{% extends 'base.html' %}
+    
+{% block title %}Préstamos Ortega{% endblock %}
+
+{% block customCSS %}
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/fecha.css') }}"> 
+{% endblock %}
+
+{% block content %}  
+<main> 
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Proximo Pago</title>
+    
+</head>
+<body>
+    <div class="container">
+        <h1>Próximo Pago</h1>
+        <table>
+            <tr>
+                <th>Monto del préstamo</th>
+                <th>Tasa de interés</th>
+                <th>Plazo del préstamo</th>
+                <th>Fecha del próximo pago</th>
+            </tr>
+            <tr>
+                <td>$5000</td>
+                <td>5%</td>
+                <td>12 meses</td>
+                <td>2023-09-15</td>
+            </tr>
+            <!-- Agrega más filas aquí para mostrar más préstamos -->
+        </table>
+        <li><a href="{{ url_for('home.terminos') }}" class="btn-siguiente">Siguiente</a></li>
+        
+    </div>
+</body>
+</html>
+{% endblock%} 
